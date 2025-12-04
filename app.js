@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 import express from 'express';
 import path from 'path'
 import session from 'express-session'
@@ -5,6 +7,8 @@ import passport from 'passport'
 
 import { PrismaClient } from '@prisma/client';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
+
+import indexRouter from './routes/index.routes.js';
 
 const app = express()
 export const prisma = new PrismaClient()
@@ -34,3 +38,5 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use('/', indexRouter)

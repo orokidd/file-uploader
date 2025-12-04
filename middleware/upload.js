@@ -2,13 +2,9 @@ import multer from 'multer';
 import path from 'path';
 
 // Configure storage
-const storage = multer.diskStorage({
-  destination: './uploads/',
-  filename: (req, file, cb) => {
-    const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`;
-    cb(null, uniqueName);
-  }
-});
+// const storage = multer.diskStorage({
+//   destination: './uploads/'
+// });
 
 // File filter
 const fileFilter = (req, file, cb) => {
@@ -27,6 +23,6 @@ const limits = {
   fileSize: 10 * 1024 * 1024 // 10MB max
 };
 
-const upload = multer({ storage, fileFilter, limits });
+const upload = multer({ dest: 'uploads/', fileFilter, limits });
 
 export default upload;

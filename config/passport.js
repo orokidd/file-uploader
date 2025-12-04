@@ -1,7 +1,6 @@
 import bcrypt from 'bcryptjs';
-import pool from '../models/pool.js';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { prisma } from '..app.js';
+import { prisma } from '../app.js';
 
 export default function initializePassport(passport) { 
     passport.use(
@@ -13,7 +12,7 @@ export default function initializePassport(passport) {
                 if (!user) {
                     return done(null, false, { message: "Incorrect username" });
                 }
-                const passwordMatch = await bcrypt.compare(password, user.password_hash);
+                const passwordMatch = await bcrypt.compare(password, user.password);
                 if (!passwordMatch) {
                     return done(null, false, { message: "Incorrect password" });
                 }

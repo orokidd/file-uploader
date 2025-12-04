@@ -1,14 +1,67 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
-}
-
 datasource db {
   provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"  
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+
+  files     File[]   
+  folders   Folder[] 
+  sessions  Session[] 
+
+  @@map("file_uploader_users") 
+}
+
+model File {
+  id           String   @id @default(cuid()) 
+  filename     String
+  originalName String   
+  mimeType     String   
+  size         Int     
+  url          String   @unique
+  path         String   
+  uploadedBy   User     @relation(fields: [uploadedById], references: [id])
+  uploadedById Int
+  folder       Folder?  @relation(fields: [folderId], references: [id]) 
+  folderId     Int?
+  createdAt    DateTime @default(now())
+
+  @@map("file_uploader_files")
+  @@index([uploadedById])  // Faster queries
+}
+
+model Folder {
+  id        Int      @id @default(autoincrement())
+  name      String
+  owner     User     @relation(fields: [ownerId], references: [id])
+  ownerId   Int
+  files     File[]   
+  parent    Folder?  @relation("FolderHierarchy", fields: [parentId], references: [id])
+  parentId  Int?
+  children  Folder[] @relation("FolderHierarchy") // Nested folders
+  createdAt DateTime @default(now())
+
+  @@map("file_uploader_folders")
+  @@unique([ownerId, name])  
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  sid       String   @unique @db.VarChar(255)
+  data      String
+  expiresAt DateTime
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    Int?
+  createdAt DateTime @default(now())
+
+  @@map("file_uploader_sessions")
+  @@index([sid])  
+  @@index([expiresAt]) 
 }

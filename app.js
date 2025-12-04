@@ -8,7 +8,10 @@ import passport from 'passport'
 import { PrismaClient } from '@prisma/client';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 
-import indexRouter from './routes/index.routes.js';
+// import indexRouter from './routes/index.routes.js';
+
+import initializePassport from './config/passport.js';
+import checkAuthentication from './middleware/checkAuthentication.js';
 
 const app = express()
 export const prisma = new PrismaClient()
@@ -36,7 +39,19 @@ app.use(
     })
 );
 
+initializePassport(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRouter)
+// app.use('/', indexRouter)
+
+app.get("/dashboard", checkAuthentication, async (req, res) => {
+    const user = req.user;
+    const files = await prisma.file.findMany({
+        where: { userId: user.id }
+    });
+    const folders = await prisma.folder.findMany({
+        where: { userId : user.id }
+    })
+    res.render("dashboard", { user, files, folders }); 
+});

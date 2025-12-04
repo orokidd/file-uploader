@@ -10,6 +10,7 @@ model User {
   id        Int      @id @default(autoincrement())
   username  String   @unique
   password  String
+
   folders   Folder[]
   files     File[]
  
@@ -19,6 +20,7 @@ model User {
 model Folder {
   id        Int      @id @default(autoincrement())
   name      String
+
   user      User     @relation(fields: [userId], references: [id])
   userId    Int
   files     File[]
@@ -31,11 +33,12 @@ model File {
   name      String
   url       String?
   size      Int
+  createdAt DateTime @default(now())
+
   folder    Folder?  @relation(fields: [folderId], references: [id])
   folderId  Int?
   user      User     @relation(fields: [userId], references: [id])
   userId    Int
-  createdAt DateTime @default(now())
 
   @@map("file_uploader_file")
 }

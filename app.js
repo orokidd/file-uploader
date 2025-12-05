@@ -45,16 +45,16 @@ app.use(passport.session());
 
 // app.use('/', indexRouter)
 
-app.get("/dashboard", checkAuthentication, async (req, res) => {
-    const user = req.user;
-    const files = await prisma.file.findMany({
-        where: { userId: user.id }
-    });
-    const folders = await prisma.folder.findMany({
-        where: { userId : user.id }
-    })
-    res.render("dashboard", { user, files, folders }); 
-});
+// app.get("/dashboard", checkAuthentication, async (req, res) => {
+//     const user = req.user;
+//     const files = await prisma.file.findMany({
+//         where: { userId: user.id }
+//     });
+//     const folders = await prisma.folder.findMany({
+//         where: { userId : user.id }
+//     })
+//     res.render("dashboard", { user, files, folders }); 
+// });
 
 // app.get("/upload", checkAuthentication, (req, res) => {
 //   res.render("upload")
@@ -77,7 +77,7 @@ app.get("/folder/:id", checkAuthentication, async (req, res) => {
   const user = req.user;
 
   const folder = await prisma.folder.findUnique({
-    where: { id: parseInt(folderId) }
+    where: { id: parseInt(folderId) , userId: user.id}
   })
   const files = await prisma.file.findMany({
       where: { folderId: parseInt(folderId), userId: user.id }
@@ -97,6 +97,7 @@ app.post("/folder", checkAuthentication, async (req, res) => {
 
 app.post("/folder/:id/uploadFile", checkAuthentication, upload.single('file'), async (req, res) => {
   const folderId = req.params.id
+  
   await prisma.file.create({
     data: {
       name: req.file.filename,

@@ -1,4 +1,4 @@
-import { prisma } from '../app.js';
+import prisma from '../config/prisma.js';
 import passport from 'passport';
 import bcrypt from 'bcrypt';
 

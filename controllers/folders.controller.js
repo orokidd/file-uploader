@@ -1,4 +1,4 @@
-import { prisma } from '../app.js'
+import prisma from '../config/prisma.js';
 
 const getFolder = async (req, res) => {
     const folderId = req.params.fodlerId;

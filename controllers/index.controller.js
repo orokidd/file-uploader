@@ -1,4 +1,4 @@
-import { prisma } from '../app.js';
+import prisma from '../config/prisma.js';
 
 const redirectIndex = (req, res) => {
     res.redirect("/dashboard");

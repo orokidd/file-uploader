@@ -1,4 +1,4 @@
-import { prisma } from '../app.js';
+import prisma from '../config/prisma.js';
 
 const uploadFile = async (req, res) => {
     await prisma.file.create({

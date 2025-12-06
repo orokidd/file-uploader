@@ -41,3 +41,10 @@ const downloadFile = async (req, res) => {
     })
     res.download(file.url, file.name)
 }
+
+export default {
+    uploadFile,
+    uploadFileToFolder,
+    getFileDetails,
+    downloadFile
+}

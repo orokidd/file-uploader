@@ -72,18 +72,18 @@ app.use(passport.session());
 //   res.redirect("/dashboard")
 // })
 
-app.get("/folder/:id", checkAuthentication, async (req, res) => {
-  const folderId = req.params.id
-  const user = req.user;
+// app.get("/folder/:id", checkAuthentication, async (req, res) => {
+//   const folderId = req.params.id
+//   const user = req.user;
 
-  const folder = await prisma.folder.findUnique({
-    where: { id: parseInt(folderId) , userId: user.id}
-  })
-  const files = await prisma.file.findMany({
-      where: { folderId: parseInt(folderId), userId: user.id }
-  });
-  res.render("folder", { user, folder, files });
-})
+//   const folder = await prisma.folder.findUnique({
+//     where: { id: parseInt(folderId) , userId: user.id}
+//   })
+//   const files = await prisma.file.findMany({
+//       where: { folderId: parseInt(folderId), userId: user.id }
+//   });
+//   res.render("folder", { user, folder, files });
+// })
 
 app.post("/folder", checkAuthentication, async (req, res) => {
   await prisma.folder.create({

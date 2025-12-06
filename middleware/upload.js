@@ -1,10 +1,5 @@
 import multer from 'multer';
 
-// Configure storage
-// const storage = multer.diskStorage({
-//   destination: './uploads/'
-// });
-
 const upload = multer({
   dest: "uploads/",
   limits: { fileSize: 10 * 1024 * 1024 }, // 10MB

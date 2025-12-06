@@ -60,17 +60,17 @@ app.use(passport.session());
 //   res.render("upload")
 // } )
 
-app.post("/uploadFile", checkAuthentication, upload.single('file'), async (req, res) => {
-  await prisma.file.create({
-    data: {
-      name: req.file.filename,
-      size: req.file.size,
-      url: req.file.path,
-      userId: req.user.id
-    }
-  })
-  res.redirect("/dashboard")
-})
+// app.post("/uploadFile", checkAuthentication, upload.single('file'), async (req, res) => {
+//   await prisma.file.create({
+//     data: {
+//       name: req.file.filename,
+//       size: req.file.size,
+//       url: req.file.path,
+//       userId: req.user.id
+//     }
+//   })
+//   res.redirect("/dashboard")
+// })
 
 app.get("/folder/:id", checkAuthentication, async (req, res) => {
   const folderId = req.params.id
@@ -95,33 +95,33 @@ app.post("/folder", checkAuthentication, async (req, res) => {
   res.redirect("/dashboard")
 })
 
-app.post("/folder/:id/uploadFile", checkAuthentication, upload.single('file'), async (req, res) => {
-  const folderId = req.params.id
+// app.post("/folder/:id/uploadFile", checkAuthentication, upload.single('file'), async (req, res) => {
+//   const folderId = req.params.id
   
-  await prisma.file.create({
-    data: {
-      name: req.file.filename,
-      size: req.file.size,
-      url: req.file.path,
-      userId: req.user.id,
-      folderId: parseInt(folderId)
-    }
-  })
-})
+//   await prisma.file.create({
+//     data: {
+//       name: req.file.filename,
+//       size: req.file.size,
+//       url: req.file.path,
+//       userId: req.user.id,
+//       folderId: parseInt(folderId)
+//     }
+//   })
+// })
 
-app.get("/file/:fileId", checkAuthentication, async (req, res) =>{
-  const fileId = req.params.fileId
-  const file = await prisma.file.findUnique({
-    where: { id: parseInt(fileId) }
-  })
+// app.get("/file/:fileId", checkAuthentication, async (req, res) =>{
+//   const fileId = req.params.fileId
+//   const file = await prisma.file.findUnique({
+//     where: { id: parseInt(fileId) }
+//   })
 
-  res.render("fileDetails", { user: req.user, file })
-})
+//   res.render("fileDetails", { user: req.user, file })
+// })
 
-app.get("/file/:fileId/download", checkAuthentication, async (req, res) => {
-  const fileId = req.params.fileId
-  const file = await prisma.file.findUnique({
-    where: { id: parseInt(fileId) }
-  })
-  res.download(file.url, file.name)
-})
+// app.get("/file/:fileId/download", checkAuthentication, async (req, res) => {
+//   const fileId = req.params.fileId
+//   const file = await prisma.file.findUnique({
+//     where: { id: parseInt(fileId) }
+//   })
+//   res.download(file.url, file.name)
+// })

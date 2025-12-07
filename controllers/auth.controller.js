@@ -1,6 +1,6 @@
-import prisma from '../config/prisma.js';
-import passport from 'passport';
-import bcrypt from 'bcrypt';
+const prisma = require("../config/prisma.js");
+const passport = require("passport")
+const bcrypt = require("bcrypt")
 
 const getLogin = (req, res) => {
     if (req.isAuthenticated()) {
@@ -72,7 +72,7 @@ const logout = (req, res, next) => {
     })
 }
 
-export default {
+module.exports = {
     getLogin,
     getRegister,
     postLogin,

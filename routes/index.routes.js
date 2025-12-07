@@ -1,9 +1,9 @@
-import express from 'express';
-import checkAuthenticaiton from '../middleware/checkAuthentication.js'
-import indexController from '../controllers/index.controller.js';
+const express = require('express');
+const checkAuthentication = require('../middleware/checkAuthentication.js');
+const indexController = require('../controllers/index.controller.js');
 const router = express.Router();
 
-router.get("/", checkAuthenticaiton, indexController.redirectIndex);
-router.get("/dashboard", checkAuthenticaiton, indexController.getDashboard);
+router.get("/", checkAuthentication, indexController.redirectIndex);
+router.get("/dashboard", checkAuthentication, indexController.getDashboard);
 
-export default router
+module.exports = router;

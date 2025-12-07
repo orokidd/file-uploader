@@ -1,6 +1,6 @@
-import express from 'express';
-import checkAuthentication from '../middleware/checkAuthentication.js';
-import foldersController from '../controllers/folders.controller.js'
+const express = require('express');
+const checkAuthentication = require('../middleware/checkAuthentication.js');
+const foldersController = require('../controllers/folders.controller.js');
 
 const router = express.Router();
 

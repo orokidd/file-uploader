@@ -1,4 +1,4 @@
-import multer from 'multer';
+const multer = require("multer");
 
 const upload = multer({
   dest: "uploads/",
@@ -10,4 +10,4 @@ const upload = multer({
   }
 });
 
-export default upload;
+module.exports = upload;

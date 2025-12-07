@@ -1,4 +1,4 @@
-import prisma from '../config/prisma.js';
+const prisma = require("../config/prisma.js");
 
 const redirectIndex = (req, res) => {
     res.redirect("/dashboard");
@@ -15,7 +15,7 @@ const getDashboard = async (req, res) => {
     res.render("dashboard", { user, files, folders }); 
 }
 
-export default {
+module.exports = {
     redirectIndex,
     getDashboard
-}
+};

@@ -1,15 +1,17 @@
 require("dotenv").config();
 
-import express from 'express';
-import path from 'path'
-import session from 'express-session'
-import passport from 'passport'
-import { PrismaSessionStore } from '@quixo3/prisma-session-store';
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
 
-import indexRouter from './routes/index.routes.js';
+const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
+const prisma = require('./config/prisma.js');
 
-import initializePassport from './config/passport.js';
-import errorHandler from './middleware/errorHandler.js'
+const indexRouter = require('./routes/index.routes.js');
+
+const initializePassport = require('./config/passport.js');
+const errorHandler = require('./middleware/errorHandler.js');
 
 const app = express()
 

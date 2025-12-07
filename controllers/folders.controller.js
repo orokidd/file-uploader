@@ -1,4 +1,4 @@
-import prisma from '../config/prisma.js';
+const prisma = require("../config/prisma.js");
 
 const getFolder = async (req, res) => {
     const folderId = req.params.fodlerId;
@@ -24,7 +24,7 @@ const createFolder = async (req, res) => {
     res.redirect("/dashboard")
 }
 
-export default {
+module.exports = {
     getFolder,
     createFolder
 }

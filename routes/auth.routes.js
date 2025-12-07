@@ -1,7 +1,5 @@
-import express from 'express';
-import checkAuthentication from '../middleware/checkAuthentication';
-import authController from '../controllers/auth.controller.js';
-
+const express = require('express');
+const authController = require('../controllers/auth.controller.js');
 const router = express.Router()
 
 router.get("/login", authController.getLogin)

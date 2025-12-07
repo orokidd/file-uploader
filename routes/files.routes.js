@@ -1,7 +1,7 @@
-import express from 'express';
-import checkAuthentication from '../middleware/checkAuthentication.js'
-import filesController from '../controllers/files.controller.js'
-import upload from '../config/multer.js'
+const express = require('express');
+const checkAuthentication = require('../middleware/checkAuthentication.js');
+const filesController = require('../controllers/files.controller.js');
+const upload = require('../config/multer.js');
 
 const router = express.Router()
 

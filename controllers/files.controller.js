@@ -1,4 +1,4 @@
-import prisma from '../config/prisma.js';
+const prisma = require("../config/prisma.js");
 
 const uploadFile = async (req, res) => {
     await prisma.file.create({
@@ -42,7 +42,7 @@ const downloadFile = async (req, res) => {
     res.download(file.url, file.name)
 }
 
-export default {
+module.exports = {
     uploadFile,
     uploadFileToFolder,
     getFileDetails,

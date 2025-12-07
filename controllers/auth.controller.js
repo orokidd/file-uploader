@@ -3,10 +3,16 @@ import passport from 'passport';
 import bcrypt from 'bcrypt';
 
 const getLogin = (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.redirect('/');
+    }
     res.render("login");
 }
 
 const getRegister = (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.redirect('/');
+    }
     res.render("register");
 }
 

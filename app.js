@@ -4,10 +4,9 @@ import express from 'express';
 import path from 'path'
 import session from 'express-session'
 import passport from 'passport'
-
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 
-// import indexRouter from './routes/index.routes.js';
+import indexRouter from './routes/index.routes.js';
 
 import initializePassport from './config/passport.js';
 import errorHandler from './middleware/errorHandler.js'
@@ -40,6 +39,8 @@ app.use(
 initializePassport(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use('/', indexRouter);
 
 app.use(errorHandler.notFound)
 app.use(errorHandler.serverError)

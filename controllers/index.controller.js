@@ -12,7 +12,7 @@ const getDashboard = async (req, res) => {
     const folders = await prisma.folder.findMany({
         where: { userId : user.id }
     })
-    res.render("dashboard", { user, files, folders }); 
+    res.render("./index/dashboard", { user, files, folders }); 
 }
 
 module.exports = {

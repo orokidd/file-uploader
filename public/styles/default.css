@@ -1,0 +1,160 @@
+/* css reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+ul,
+li,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* own css */
+
+:root {
+  --bg: #121212;
+  --bg-alt: #1e1e1e;
+  --bg-alt-darker: #1b1b1b;
+  --fg: #faf9f6;
+  --accent: #c6fbbb;
+  --accent-darker: #9bc593;
+  --gray: #979797;
+  --dark-gray: #393939;
+  --darker-gray: #2c2c2c;
+  --light-gray: #b2b2b2;
+  --red: #e75555;
+}
+
+@font-face {
+  font-family: jost;
+  src: url("/fonts/jost-variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  src: url("/fonts/playfair-variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: quicksand;
+  src: url("/fonts/quicksand-variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: inter;
+  src: url("/fonts/inter-variable.ttf") format("truetype");
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: inter, sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.header-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.header-options a {
+  transition: all ease 0.3s;
+}
+
+.header-options a:hover {
+  color: var(--accent);
+}
+
+.site-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 20px 0;
+  color: var(--gray);
+}
+
+footer a {
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-darker);
+}
+
+/* button reset */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}

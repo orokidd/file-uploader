@@ -7,4 +7,4 @@ const router = express.Router();
 router.get("/folders/:folderId", checkAuthentication, foldersController.getFolder);
 router.post("/folders", checkAuthentication, foldersController.createFolder);
 
-export default router;
+module.exports = router;

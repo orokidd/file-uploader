@@ -1,7 +1,7 @@
 const express = require('express');
 const checkAuthentication = require('../middleware/checkAuthentication.js');
 const filesController = require('../controllers/files.controller.js');
-const upload = require('../config/multer.js');
+const upload = require('../middleware/multer.js');
 
 const router = express.Router()
 
@@ -10,4 +10,4 @@ router.post("/folders/:folderId/uploadFile", checkAuthentication, upload.single(
 router.get("/file/:fileId", checkAuthentication, filesController.getFileDetails);
 router.get("/file/:fileId/download", checkAuthentication, filesController.downloadFile)
 
-export default router;
+module.exports = router;

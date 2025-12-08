@@ -4,16 +4,16 @@ const bcrypt = require("bcrypt")
 
 const getLogin = (req, res) => {
     if (req.isAuthenticated()) {
-        return res.redirect('/');
+        return res.redirect('/dashboard');
     }
-    res.render("login");
+    res.render("./auth/login/login");
 }
 
 const getRegister = (req, res) => {
     if (req.isAuthenticated()) {
-        return res.redirect('/');
+        return res.redirect('/dashboard');
     }
-    res.render("register");
+    res.render("./auth/register/register");
 }
 
 const postLogin = (req, res, next) => {

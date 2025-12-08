@@ -9,6 +9,9 @@ const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
 const prisma = require('./config/prisma.js');
 
 const indexRouter = require('./routes/index.routes.js');
+const authRouter = require('./routes/auth.routes.js');
+const folderRouter = require('./routes/folders.routes.js');
+const fileRouter = require('./routes/files.routes.js');
 
 const initializePassport = require('./config/passport.js');
 const errorHandler = require('./middleware/errorHandler.js');
@@ -43,6 +46,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
+app.use('/', authRouter);
+app.use('/', folderRouter);
+app.use('/', fileRouter);
 
 app.use(errorHandler.notFound)
 app.use(errorHandler.serverError)

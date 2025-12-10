@@ -7,7 +7,7 @@ const redirectIndex = (req, res) => {
 const getDashboard = async (req, res) => {
     const user = req.user;
     const files = await prisma.file.findMany({
-        where: { userId: user.id }
+        where: { userId: user.id , folderId: null }
     });
     const folders = await prisma.folder.findMany({
         where: { userId : user.id }

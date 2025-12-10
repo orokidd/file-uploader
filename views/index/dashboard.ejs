@@ -7,7 +7,26 @@
 </head>
 <body>
     <div class="container">
-        <h1>This is the dashboard mr pepe julian ozima</h1>
+        <div class="header">
+            <h1>This is <%= user.username %> folders</h1>
+            <a href="/logout">Logout</a>
+        </div>
+        <div class="main">
+            <div class="folders">
+                <% folders.forEach((folder) => { %>
+                    <div class="folder">
+                        <h2><a href="/folders/<%= folder.id %>"><%= folder.name %></a></h2>
+                    </div>
+                <% }); %>
+            </div>
+            <div class="create-folder">
+                <h2>Create New Folder</h2>
+                <form action="/folders" method="POST">
+                    <input type="text" name="foldername" placeholder="Folder Name" required>
+                    <button type="submit">Create Folder</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

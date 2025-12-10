@@ -1,7 +1,7 @@
 const prisma = require("../config/prisma.js");
 
 const getFolder = async (req, res) => {
-    const folderId = req.params.fodlerId;
+    const folderId = req.params.folderId;
     const user = req.user
     const folder = await prisma.folder.findUnique({
         where: { id: parseInt(folderId), userId: user.id }

@@ -23,7 +23,7 @@ const uploadFileToFolder = async (req, res) => {
             folderId: parseInt(folderId)
         }
     })
-    res.redirect(`/folder/${folderId}`)
+    res.redirect(`/folders/${folderId}`)
 }
 
 const getFileDetails = async (req, res) => {
@@ -39,7 +39,7 @@ const downloadFile = async (req, res) => {
     const file = await prisma.file.findUnique({
         where: { id: parseInt(fileId) }
     })
-    res.download(file.url, file.name)
+    res.download(`uploads/${file.name}`)
 }
 
 module.exports = {

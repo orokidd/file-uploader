@@ -11,7 +11,7 @@ const getFolder = async (req, res) => {
         where: { folderId: parseInt(folderId), userId: user.id }
     })
 
-    res.render("folder", { user, folder, files })
+    res.render("./folder/folder", { user, folder, files })
 }
 
 const createFolder = async (req, res) => {

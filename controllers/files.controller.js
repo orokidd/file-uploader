@@ -42,6 +42,14 @@ const downloadFile = async (req, res) => {
     res.download(`uploads/${file.name}`)
 }
 
+const deleteFile = async (req, res) => {
+    const fileId = req.params.fileId;
+    await prisma.file.delete({
+        where: { id: parseInt(fileId) }
+    })
+    res.redirect("/dashboard")
+}
+
 module.exports = {
     uploadFile,
     uploadFileToFolder,

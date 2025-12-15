@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/default.css">
     <link rel="stylesheet" href="/styles/welcome.css">
+    <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/modals.css">
     <title>Dashboard</title>
 </head>
@@ -13,13 +14,7 @@
         <%- include('../header') %>
         <%- include('../welcome') %>
         <div class="main">
-            <div class="folders">
-                <% folders.forEach((folder) => { %>
-                    <div class="folder">
-                        <h2><a href="/folders/<%= folder.id %>"><%= folder.name %></a></h2>
-                    </div>
-                <% }); %>
-            </div>
+            <%- include('./folders') %>
             <div class="files">
                 <h2>Files</h2>
                 <% files.forEach((file) => { %>
@@ -43,7 +38,6 @@
                 <h2>Upload New File</h2>
                 <form id="upload-file-form" action="/uploadFile" method="POST" enctype="multipart/form-data">
                     <input id="upload-file-input" type="file" name="file" required>
-                    <!-- <button type="submit">Upload File</button> -->
                 </form>
             </div>
         </div>

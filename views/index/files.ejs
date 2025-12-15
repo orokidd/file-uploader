@@ -23,7 +23,9 @@
 
 
             <div class="file-footer">
-                <p class="mimetype">PNG</p>
+                <p class="mimetype">
+                    <%= file.mimetype ? file.mimetype : '???' %>
+                </p>
 
                 <div class="file-actions">
                     <form action="/files/<%= file.id %>/delete" method="POST">

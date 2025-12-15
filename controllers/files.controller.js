@@ -6,6 +6,7 @@ const uploadFile = async (req, res) => {
             name: req.file.filename,
             size: req.file.size,
             url: req.file.path,
+            mimetype: req.file.mimetype,
             userId: req.user.id
         }
     })

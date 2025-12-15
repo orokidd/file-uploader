@@ -58,6 +58,11 @@
     gap: 8px;
 }
 
+/* Make file link text wrap inside the grid cell */
+.file-content a {
+    overflow-wrap: anywhere;
+}
+
 .file-footer {
     display: flex;
     gap: 12px;
@@ -65,7 +70,7 @@
     padding: 12px 16px;
 }
 
-.file-footer .mimetype {
+.mimetype {
     padding: 4px 10px;
     font-size: 0.8rem;
     background-color: var(--dark-gray);
@@ -81,17 +86,15 @@
     align-items: center;
 }
 
-form {
+.file-actions form {
     display: flex;
-}
-
-/* Make file link text wrap inside the grid cell */
-.file-content a {
-    display: inline-block;
-    word-break: break-word;
-    overflow-wrap: anywhere;
 }
 
 .file-footer button {
     color: white;
+}
+
+#file-delete-button:hover, #file-download-button:hover{
+    cursor: pointer;
+    filter: brightness(80%);
 }

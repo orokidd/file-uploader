@@ -42,14 +42,15 @@
             </div>
             <div class="upload-file">
                 <h2>Upload New File</h2>
-                <form action="/uploadFile" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="file" required>
-                    <button type="submit">Upload File</button>
+                <form id="upload-file-form" action="/uploadFile" method="POST" enctype="multipart/form-data">
+                    <input id="upload-file-input" type="file" name="file" required>
+                    <!-- <button type="submit">Upload File</button> -->
                 </form>
             </div>
         </div>
     </div>
     <%- include('../modals/new-folder') %>
     <script src="/scripts/modal.js"></script>
+    <script src="/scripts/upload.js"></script>
 </body>
 </html>

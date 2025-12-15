@@ -4,6 +4,7 @@ const uploadFile = async (req, res) => {
     await prisma.file.create({
         data: {
             name: req.file.filename,
+            originalName: req.file.originalname,
             size: req.file.size,
             url: req.file.path,
             mimetype: req.file.mimetype,
@@ -18,8 +19,10 @@ const uploadFileToFolder = async (req, res) => {
     await prisma.file.create({
         data: {
             name: req.file.filename,
+            originalName: req.file.originalname,
             size: req.file.size,
             url: req.file.path,
+            mimetype: req.file.mimetype,
             userId: req.user.id,
             folderId: parseInt(folderId)
         }

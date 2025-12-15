@@ -15,22 +15,7 @@
         <%- include('../welcome') %>
         <div class="main">
             <%- include('./folders') %>
-            <div class="files">
-                <h2>Files</h2>
-                <% files.forEach((file) => { %>
-                    <div class="file">
-                        <div class="file-content">
-                            <h3><a href="/files/<%= file.id %>"><%= file.name %></a><a href="/file/<%= file.id %>/download">Download</a></h3>
-                        </div>
-
-                        <div class="file-actions">
-                            <form action="/files/<%= file.id %>/delete" method="POST">
-                                <button type="submit">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                <% }); %>
-            </div>
+            <%- include('./files') %>
             <div class="create-folder-button">
                 <button onclick="openNewFolderModal()">Create New Folder</button>
             </div>

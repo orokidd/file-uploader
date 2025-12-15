@@ -20,3 +20,22 @@
 .folder-link:hover {
     filter: brightness(86%);
 }
+
+.files {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* Allow folder names to wrap and take remaining space beside the icon */
+.folder-link p {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Make file link text wrap inside the grid cell */
+.file-content a {
+    display: inline-block;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}

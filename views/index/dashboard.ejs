@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/modals.css">
     <title>Dashboard</title>
 </head>
 <body>
@@ -24,17 +25,25 @@
                 <h2>Files</h2>
                 <% files.forEach((file) => { %>
                     <div class="file">
-                        <h3><a href="/files/<%= file.id %>"><%= file.name %></a><a href="/file/<%= file.id %>/download">Download</a></h3>
+                        <div class="file-content">
+                            <h3><a href="/files/<%= file.id %>"><%= file.name %></a><a href="/file/<%= file.id %>/download">Download</a></h3>
+                        </div>
+
+                        <div class="file-actions">
+                            <form action="/files/<%= file.id %>/delete" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
                     </div>
                 <% }); %>
             </div>
-            <div class="create-folder">
+            <!-- <div class="create-folder">
                 <h2>Create New Folder</h2>
                 <form action="/folders" method="POST">
                     <input type="text" name="foldername" placeholder="Folder Name" required>
                     <button type="submit">Create Folder</button>
                 </form>
-            </div>
+            </div> -->
             <div class="upload-file">
                 <h2>Upload New File</h2>
                 <form action="/uploadFile" method="POST" enctype="multipart/form-data">
@@ -44,5 +53,6 @@
             </div>
         </div>
     </div>
+    <%- include('../modals/new-folder') %>
 </body>
 </html>

@@ -7,6 +7,7 @@ const router = express.Router()
 
 router.post("/uploadFile", checkAuthentication, upload.single('file'), filesController.uploadFile);
 router.post("/folders/:folderId/uploadFile", checkAuthentication, upload.single('file'), filesController.uploadFileToFolder)
+router.post("/files/:fileId/delete", checkAuthentication, filesController.deleteFile);
 router.get("/file/:fileId", checkAuthentication, filesController.getFileDetails);
 router.get("/file/:fileId/download", checkAuthentication, filesController.downloadFile)
 

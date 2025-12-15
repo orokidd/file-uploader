@@ -54,5 +54,6 @@ module.exports = {
     uploadFile,
     uploadFileToFolder,
     getFileDetails,
-    downloadFile
+    downloadFile,
+    deleteFile
 }

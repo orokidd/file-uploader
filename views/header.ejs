@@ -1,0 +1,14 @@
+<header class="header">
+  <div class="site-icon">
+    <a href="/"><img src="/images/site-icon.jpeg" alt="Book Inventory" /></a>
+  </div>
+
+  <div class="header-options">
+    <% if (user) { %>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Log out</a>
+    <% } else { %>
+    <a href="/sign-in">Login</a>
+    <% } %>
+  </div>
+</header>

@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/default.css">
+    <link rel="stylesheet" href="/styles/welcome.css">
     <link rel="stylesheet" href="/styles/modals.css">
     <title>Dashboard</title>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>This is <%= user.username %> folders</h1>
-            <a href="/logout">Logout</a>
-        </div>
+        <%- include('../header') %>
+        <%- include('../welcome') %>
         <div class="main">
             <div class="folders">
-                <h2>Folders</h2>
                 <% folders.forEach((folder) => { %>
                     <div class="folder">
                         <h2><a href="/folders/<%= folder.id %>"><%= folder.name %></a></h2>

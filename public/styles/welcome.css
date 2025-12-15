@@ -1,0 +1,27 @@
+.welcome-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 30px;
+}
+
+.welcome-user{
+    grid-column: 1;
+    grid-row: 1;
+
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.welcome-text {
+    grid-column: 1;
+    grid-row: 2;
+
+    color: var(--gray);
+}
+
+@media screen and (max-width: 768px) {
+    .welcome-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -14,4 +14,9 @@
     
     background-color: var(--darker-gray);
     padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.folder-link:hover {
+    filter: brightness(86%);
 }

@@ -42,7 +42,8 @@
 
 .files {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, 268px); /* Auto-repeat rows */
     gap: 16px;
 }
 
@@ -53,6 +54,7 @@
     background-color: var(--darker-gray);
     border-radius: 8px;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .file-icon {
@@ -78,6 +80,11 @@
 .file-content a {
     word-break: break-word;
     overflow-wrap: anywhere;
+    transition: all 0.3s ease;
+}
+
+.file-content a:hover {
+    color: var(--accent)
 }
 
 .file-footer {
@@ -107,13 +114,14 @@
     display: flex;
 }
 
-.file-footer button {
-    color: white;
+#file-delete-button svg, #file-download-button svg{
+    transition: all 0.3s ease;
+    stroke: var(--fg)
 }
 
-#file-delete-button:hover, #file-download-button:hover{
+#file-delete-button svg:hover, #file-download-button svg:hover{
     cursor: pointer;
-    filter: brightness(80%);
+    stroke: var(--accent)
 }
 
 #upload-file-input {

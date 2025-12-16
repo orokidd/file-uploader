@@ -31,7 +31,8 @@
 }
 
 .folder-link:hover {
-    filter: brightness(86%);
+    color: var(--accent);
+    filter: brightness(90%);
 }
 
 /* Allow folder names to wrap and take remaining space beside the icon */
@@ -99,6 +100,7 @@
     font-size: 0.8rem;
     background-color: var(--dark-gray);
     border-radius: 8px;
+    color: var(--accent);
 }
 
 .file-actions {
@@ -116,7 +118,7 @@
 
 #file-delete-button svg, #file-download-button svg{
     transition: all 0.3s ease;
-    stroke: var(--fg)
+    stroke: var(--gray)
 }
 
 #file-delete-button svg:hover, #file-download-button svg:hover{

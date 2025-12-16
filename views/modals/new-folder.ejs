@@ -4,7 +4,7 @@
         <form id="new-folder-form" action="/folders" method="POST">
             <input id="new-folder-input" type="text" name="foldername" placeholder="Folder Name" required>
             <div class="button-group">
-                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="button" class="cancel-btn" onclick="document.querySelector('.new-folder-form-modal').style.display='none'">Cancel</button>
                 <button class="confirm-btn" type="submit">Create</button>
             </div>
         </form>

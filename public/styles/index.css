@@ -138,6 +138,18 @@
     transition: all 0.3s ease;
 }
 
-.custom-button {
+.new-file-button form label svg{
+    transition: all 0.3s ease;
+}
+
+.new-file-button form:hover{
+    border: 2px dashed var(--accent);
+}
+
+.new-file-button form:hover label svg{
+    stroke: var(--accent);
+}
+
+.custom-add-button {
     padding: 70px;
 }

@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Folder</title>
-  </head>
-  <body>
-    <h1>This is the Folder page mr pepe julian ozima</h1>
-    <h2>Folder: <%= folder.name %></h2>
-    <div class="files">
-      <h2>Files in this folder:</h2>
-      <% files.forEach((file) => { %>
-      <div class="file">
-        <div class="file-content">
-          <h3><a href="/files/<%= file.id %>"><%= file.name %></a><a href="/file/<%= file.id %>/download">Download</a></h3>
-        </div>
 
-        <div class="file-actions">
-          <form action="/files/<%= file.id %>/delete" method="POST">
-            <button type="submit">Delete</button>
-          </form>
-        </div>
-      </div>
-      <% }); %>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/default.css">
+  <link rel="stylesheet" href="/styles/welcome.css">
+  <link rel="stylesheet" href="/styles/folder.css">
+  <link rel="stylesheet" href="/styles/modals.css">
+  <title>Folder</title>
+</head>
 
-    <div class="upload-file">
-      <h2>Upload New File</h2>
-      <form id="upload-file-form" action="/folders/<%= folder.id %>/uploadFile" method="POST" enctype="multipart/form-data">
-        <input id="upload-file-input" type="file" name="file" required />
-        <!-- <button type="submit">Upload File</button> -->
-      </form>
+<body>
+  <div class="container">
+
+
+    <%- include('../header') %>
+    <%- include('./welcome') %>
+    <div class="main">
+      <%- include('./files') %>
     </div>
-    <!-- <script src="/scripts/modal.js"></script> -->
-    <script src="/scripts/upload.js"></script>
-  </body>
+      <!-- <script src="/scripts/modal.js"></script> -->
+  </div>
+  <script src="/scripts/upload.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,113 @@
+.files {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.file {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    background-color: var(--darker-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.file-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-alt);
+    padding: 20px 0;
+}
+
+.file-content {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    max-height: 96px;
+    overflow: hidden;
+}
+
+/* Make file link text wrap inside the grid cell */
+.file-content a {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.file-footer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+.mimetype {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+}
+
+.file-actions {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.file-actions form {
+    display: flex;
+}
+
+.file-footer button {
+    color: white;
+}
+
+#file-delete-button:hover, #file-download-button:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+#upload-file-input {
+    display: none;
+}
+
+#upload-file-input + label {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.new-file-button form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    /* background-color: var(--darker-gray); */
+    border: 2px dashed var(--dark-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.new-file-button form label svg{
+    transition: all 0.3s ease;
+}
+
+.new-file-button form:hover{
+    border: 2px dashed var(--accent);
+}
+
+.new-file-button form:hover label svg{
+    stroke: var(--accent);
+}
+
+.custom-add-button {
+    padding: 70px;
+}

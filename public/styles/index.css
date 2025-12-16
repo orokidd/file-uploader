@@ -120,3 +120,16 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+.new-file-button form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    /* background-color: var(--darker-gray); */
+    border: 2px dashed var(--dark-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

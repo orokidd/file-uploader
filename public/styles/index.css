@@ -69,10 +69,14 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    max-height: 96px;
+    overflow: hidden;
 }
 
 /* Make file link text wrap inside the grid cell */
 .file-content a {
+    word-break: break-word;
     overflow-wrap: anywhere;
 }
 
@@ -132,4 +136,8 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.custom-button {
+    padding: 70px;
 }

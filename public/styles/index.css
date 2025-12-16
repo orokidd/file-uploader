@@ -98,3 +98,12 @@
     cursor: pointer;
     filter: brightness(80%);
 }
+
+#upload-file-input {
+    display: none;
+}
+
+#upload-file-input + label {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

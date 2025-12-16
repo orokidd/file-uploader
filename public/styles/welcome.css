@@ -4,18 +4,13 @@
     padding-bottom: 30px;
 }
 
-.welcome-user{
-    grid-column: 1;
-    grid-row: 1;
-
+.user-name{
     font-size: 2rem;
     font-weight: 600;
     padding-bottom: 8px;
 }
 
 .welcome-text {
-    grid-column: 1;
-    grid-row: 2;
 
     color: var(--gray);
 }

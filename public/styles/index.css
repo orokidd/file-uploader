@@ -1,3 +1,16 @@
+.new-folder-button {
+    justify-self: end;
+    align-self: end;
+}
+
+.new-folder-button button {
+    background-color: var(--accent);
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
 .folders {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

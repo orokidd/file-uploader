@@ -5,10 +5,14 @@
 
 .new-folder-button button {
     background-color: var(--accent);
-    padding: 12px;
+    padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+
+.new-folder-button button:hover {
+    filter: brightness(60%);
 }
 
 .folders {

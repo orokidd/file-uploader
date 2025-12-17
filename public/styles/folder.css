@@ -1,3 +1,38 @@
+.folder-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.delete-folder-button {
+    align-self: end;
+}
+
+.delete-folder-button button {
+    background-color: var(--accent);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.edit-folder-button {
+    align-self: end;
+}
+
+.edit-folder-button button {
+    background-color: var(--accent);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.delete-folder-button button:hover, .edit-folder-button button:hover {
+    filter: brightness(60%)
+}
+
 .files {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

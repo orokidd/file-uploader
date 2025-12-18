@@ -18,6 +18,7 @@
 
 const newFolderModal = document.querySelector(".new-folder-form-modal")
 const deleteFileModal = document.querySelector(".file-delete-modal")
+const deleteFolderModal = document.querySelector(".folder-delete-modal")
 
 function openNewFolderModal() {
     newFolderModal.style.display = "flex"
@@ -29,11 +30,18 @@ function openNewFolderModal() {
 
 function openDeleteFileModal(fileId) {
     const deleteForm = document.querySelector("#file-delete-form");
-    
+
     deleteFileModal.style.display = "flex"
     deleteForm.action = `/files/${fileId}/delete`;
 
     window.addEventListener("click", (e) => {
         if (e.target === deleteFileModal) deleteFileModal.style.display = "none";
+    });
+}
+
+function openDeleteFolderModal() {
+    deleteFolderModal.style.display = "flex"
+    window.addEventListener("click", (e) => {
+        if (e.target === deleteFolderModal) deleteFolderModal.style.display = "none";
     });
 }

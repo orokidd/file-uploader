@@ -1,4 +1,4 @@
-.new-folder-form-modal, .file-delete-modal {
+.new-folder-form-modal, .file-delete-modal, .folder-delete-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -24,7 +24,7 @@
   max-width: 480px;
 }
 
-#new-folder-form, .file-delete-form {
+#new-folder-form, .file-delete-form, .folder-delete-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -40,7 +40,7 @@
   font-size: 0.9rem;
 }
 
-.file-delete-confirmation {
+.file-delete-confirmation, .folder-delete-confirmation {
   color: var(--gray);
   font-size: 1rem;
   padding-bottom: 10px;

@@ -1,0 +1,12 @@
+<div class="folder-delete-modal">
+    <div class="modal-content">
+        <h2>Delete folder</h2>
+        <p class="folder-delete-confirmation">Are you sure you want to delete this folder?</p>
+        <form id="folder-delete-form" action="/folders/<%= folder.id %>/delete" method="POST">
+            <div class="button-group">
+                <button type="button" class="cancel-btn" onclick="document.querySelector('.folder-delete-modal').style.display='none'">Cancel</button>
+                <button class="confirm-btn" type="submit">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>

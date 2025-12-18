@@ -33,8 +33,20 @@ const deleteFolder = async (req, res) => {
     res.redirect("/dashboard")
 }
 
+const editFolder = async (req, res) => {
+    const folderId = req.params.folderId;
+
+    await prisma.folder.update({
+        where: { id: parseInt(folderId) },
+        data: { name: req.body.foldername }
+    })
+
+    res.redirect(`/folders/${folderId}`)
+}
+
 module.exports = {
     getFolder,
     createFolder,
-    deleteFolder
+    deleteFolder,
+    editFolder
 }

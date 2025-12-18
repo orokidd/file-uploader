@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get("/folders/:folderId", checkAuthentication, foldersController.getFolder);
 router.post("/folders/:folderId/delete", checkAuthentication, foldersController.deleteFolder);
+router.post("/folders/:folderId/edit", checkAuthentication, foldersController.editFolder)
 router.post("/folders", checkAuthentication, foldersController.createFolder);
 
 module.exports = router;

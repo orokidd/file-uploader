@@ -41,6 +41,17 @@ function openDeleteFileModal(fileId) {
 
 function openDeleteFolderModal() {
     deleteFolderModal.style.display = "flex"
+
+    window.addEventListener("click", (e) => {
+        if (e.target === deleteFolderModal) deleteFolderModal.style.display = "none";
+    });
+}
+
+function openEditFolderModal() {
+    const editFolderModal = document.querySelector(".edit-folder-form-modal")
+
+    editFolderModal.style.display = "flex"
+
     window.addEventListener("click", (e) => {
         if (e.target === deleteFolderModal) deleteFolderModal.style.display = "none";
     });

@@ -1,4 +1,4 @@
-.new-folder-form-modal, .file-delete-modal, .folder-delete-modal {
+.new-folder-form-modal, .file-delete-modal, .folder-delete-modal, .edit-folder-form-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -24,13 +24,13 @@
   max-width: 480px;
 }
 
-#new-folder-form, .file-delete-form, .folder-delete-form {
+#new-folder-form, #edit-folder-form,.file-delete-form, .folder-delete-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-#new-folder-input {
+#new-folder-input, #edit-folder-input {
   width: 100%;
   padding: 12px 20px;
   border: 1px solid var(--dark-gray);

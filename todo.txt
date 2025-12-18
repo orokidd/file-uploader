@@ -1,0 +1,7 @@
+- file delete modal
+- folder delete modal
+- folder edit modal
+- fix file name overflow issue
+- file detail page
+- add footer
+- responsiveness

@@ -1,0 +1,18 @@
+<div class="main-container">
+    <div class="file-thumbnail">
+        <%- include('../file-icon') %>
+    </div>
+
+    <div class="file-details">
+        <p>File name: <%= file.name %></p>
+        <p>Mimetype: <%= file.mimetype %></p>
+        <p>Created at: <%= file.createdAt %></p>
+        <p>Size: <%= file.size %></p>
+
+        <div class="file-actions">
+            <a href="">Download</a>
+            <a href="">Delete</a>
+        </div>
+        
+    </div>
+</div>

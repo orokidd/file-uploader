@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/default.css">
+    <link rel="stylesheet" href="/styles/welcome.css">
     <title>File</title>
 </head>
 <body>
-    <h1>This is the file page mr pepe julian ozima</h1>
+    <div class="container">
+        <%- include('../header') %>
+        <%- include('./openingSection') %>
+        <%- include('./fileDetails') %>
+    </div>
 </body>
 </html>

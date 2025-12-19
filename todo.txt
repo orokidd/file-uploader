@@ -1,4 +1,3 @@
-- fix file name overflow issue
 - file detail page
 - add footer
 - responsiveness

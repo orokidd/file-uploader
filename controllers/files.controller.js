@@ -35,7 +35,7 @@ const getFileDetails = async (req, res) => {
     const file = await prisma.file.findUnique({
         where: { id: parseInt(fileId)}
     })
-    res.render("fileDetails", { user: req.user, file })
+    res.render("./file/file", { user: req.user, file })
 }
 
 const downloadFile = async (req, res) => {

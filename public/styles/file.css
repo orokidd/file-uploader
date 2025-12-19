@@ -1,0 +1,12 @@
+.welcome-container {
+    grid-template-columns: 1fr;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    background-color: var(--bg-alt);
+    padding: 24px;
+    border-radius: 8px;
+}

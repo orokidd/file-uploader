@@ -4,9 +4,44 @@
 
 .main-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 2fr;
 
     background-color: var(--bg-alt);
     padding: 24px;
     border-radius: 8px;
+}
+
+.file-thumbnail {
+    justify-self: center;
+    align-self: center;
+}
+
+.file-thumbnail svg {
+    width: 180px;
+    height: 180px;
+}
+
+.file-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.file-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 80px;
+}
+
+.download-button button, .delete-button button {
+    background-color: var(--accent);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-button button:hover, .delete-button button:hover {
+    filter: brightness(60%);
 }

@@ -2,4 +2,3 @@
 - file detail page
 - add footer
 - responsiveness
-- login and sign up style

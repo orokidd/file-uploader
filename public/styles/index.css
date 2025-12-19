@@ -83,7 +83,11 @@
 
 /* Make file link text wrap inside the grid cell */
 .file-content a {
-    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     overflow-wrap: anywhere;
     transition: all 0.3s ease;
 }

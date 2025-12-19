@@ -21,7 +21,7 @@ const postLogin = (req, res, next) => {
         if (err) return next(err);
 
         if (!user) {
-            return res.render("login", { 
+            return res.render("./auth/login/login", { 
                 error: info?.message,
             });
         }
@@ -41,11 +41,11 @@ const postRegister = async (req, res) => {
         })
 
         if (existingUser) {
-            return res.render("register", { error: "Username already taken" })
+            return res.render("./auth/register/register", { error: "Username already taken" })
         }
 
         if (password !== confirmPassword) {
-            return res.render("register", { error: "Passwords do not match" })
+            return res.render("./auth/register/register", { error: "Passwords do not match" })
         }
 
         const hashedPassword = await bcrypt.hash(password, 10)

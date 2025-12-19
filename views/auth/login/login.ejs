@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/default.css">
+    <link rel="stylesheet" href="./styles/sign-in-up.css">
     <title>Login</title>
 </head>
+
 <body>
     <div class="container">
         <div class="form-container">
-            <form action="/login" method="POST">
-                <h1>Login</h1>
+            <div class="form-header">
+                <div class="site-icon">
+                    <img src="/images/site-icon.jpeg" alt="Book Inventory" />
+                </div>
+                <h1>Sign In</h1>
+                <p>Please enter your credentials to sign in</p>
+            </div>
+
+            <% if (locals.error) { %>
+                <div class="error-container">
+                    <p class="sign-in-error"><%= error %></p>
+                </div>
+            <% } %>
+
+            <form action="/login" method="POST" class="sign-in-form">
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="button-group">
-                    <button type="submit">Login</button>
+                    <button type="submit" class="sign-in-btn">Login</button>
+                </div>
+
+                <div class="sign-up-text">
+                    <p>Don't have an account? <a href="/register">Sign Up</a></p>
                 </div>
             </form>
         </div>
     </div>
 </body>
+
 </html>

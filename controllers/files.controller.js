@@ -19,7 +19,7 @@ const uploadFile = async (req, res) => {
     }
 
     // Get public URL of the uploaded file
-    const { data: publicData } = supabase.storage.from("orokidd-study").getPublicUrl(filePath)
+    const { data: publicData } = supabase.storage.from("orokidd-study").getPublicUrl(filePath, { download: true })
 
     // Save data to database
     try {

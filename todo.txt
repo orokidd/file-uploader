@@ -1,3 +1,2 @@
-- file detail page
-- add footer
+- change download link to supabase url
 - responsiveness

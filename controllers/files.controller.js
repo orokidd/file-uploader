@@ -89,13 +89,13 @@ const getFileDetails = async (req, res) => {
     res.render("./file/file", { user: req.user, file })
 }
 
-const downloadFile = async (req, res) => {
-    const fileId = req.params.fileId
-    const file = await prisma.file.findUnique({
-        where: { id: parseInt(fileId) }
-    })
-    res.download(`uploads/${file.name}`)
-}
+// const downloadFile = async (req, res) => {
+//     const fileId = req.params.fileId
+//     const file = await prisma.file.findUnique({
+//         where: { id: parseInt(fileId) }
+//     })
+//     res.download(`uploads/${file.name}`)
+// }
 
 const deleteFile = async (req, res) => {
     const fileId = req.params.fileId;
@@ -121,6 +121,5 @@ module.exports = {
     uploadFile,
     uploadFileToFolder,
     getFileDetails,
-    downloadFile,
     deleteFile
 }

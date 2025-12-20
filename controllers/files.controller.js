@@ -58,7 +58,7 @@ const uploadFileToFolder = async (req, res) => {
         return res.status(500).send("Server error: Upload failed")
     }
 
-    const { data: publicData } = supabase.storage.from("orokidd-study").getPublicUrl(filePath)
+    const { data: publicData } = supabase.storage.from("orokidd-study").getPublicUrl(filePath, { download: true })
 
     try {
         await prisma.file.create({

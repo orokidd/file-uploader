@@ -99,6 +99,18 @@ const downloadFile = async (req, res) => {
 
 const deleteFile = async (req, res) => {
     const fileId = req.params.fileId;
+    const file = await prisma.file.findUnique({
+        where: { id: parseInt(fileId) }
+    })
+
+    // Delete the actual file from supabase storage
+    const { data, error } = await supabase.storage.from('orokidd-study').remove([`${file.name}`])
+
+    if (error) {
+        return res.status(500).send("Server error: File deletion failed")
+    }
+
+    // Delete the file record from database
     await prisma.file.delete({
         where: { id: parseInt(fileId) }
     })

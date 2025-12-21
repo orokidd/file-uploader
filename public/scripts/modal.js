@@ -28,11 +28,11 @@ function openNewFolderModal() {
     });
 }
 
-function openDeleteFileModal(fileId) {
+function openDeleteFileModal(fileId, fromPage) {
     const deleteForm = document.querySelector("#file-delete-form");
 
     deleteFileModal.style.display = "flex"
-    deleteForm.action = `/files/${fileId}/delete`;
+    deleteForm.action = `/files/${fileId}/delete?from=${fromPage}`;
 
     window.addEventListener("click", (e) => {
         if (e.target === deleteFileModal) deleteFileModal.style.display = "none";

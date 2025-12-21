@@ -98,6 +98,7 @@ const getFileDetails = async (req, res) => {
 // }
 
 const deleteFile = async (req, res) => {
+    const fromPage = req.query.from
     const fileId = req.params.fileId;
     const file = await prisma.file.findUnique({
         where: { id: parseInt(fileId) }
@@ -114,6 +115,14 @@ const deleteFile = async (req, res) => {
     await prisma.file.delete({
         where: { id: parseInt(fileId) }
     })
+
+    // Return to folder when deleting file inside a folder
+    if (fromPage === "folder") {
+        const folderId = file.folderId
+
+        return res.redirect(`/folders/${folderId}`)
+    }
+
     res.redirect("/dashboard")
 }
 

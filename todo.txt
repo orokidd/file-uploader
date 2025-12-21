@@ -1,2 +1,2 @@
-- change download link to supabase url
+- delete file from folder redirect to folder instead of dashboard
 - responsiveness

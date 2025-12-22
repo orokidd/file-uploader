@@ -41,9 +41,10 @@ app.use(
     })
 );
 
-initializePassport(passport);
+
 app.use(passport.initialize());
 app.use(passport.session());
+initializePassport(passport);
 
 app.use('/', indexRouter);
 app.use('/', authRouter);

@@ -21,6 +21,6 @@
 
 @media screen and (max-width: 768px) {
     .welcome-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr 1fr;
     }
 }

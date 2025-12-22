@@ -1,47 +1,66 @@
 .welcome-container {
-    grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 .main-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
 
-    background-color: var(--bg-alt);
-    padding: 24px;
-    border-radius: 8px;
+  background-color: var(--bg-alt);
+  padding: 40px 24px;
+  border-radius: 8px;
 }
 
 .file-thumbnail {
-    justify-self: center;
-    align-self: center;
 }
 
 .file-thumbnail svg {
-    width: 180px;
-    height: 180px;
+  width: 180px;
+  height: 180px;
 }
 
 .file-details {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .file-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 40px;
+}
+
+.download-button button,
+.delete-button button {
+  background-color: var(--accent);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-button button:hover,
+.delete-button button:hover {
+  filter: brightness(60%);
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .main-container {
     display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    padding-top: 80px;
-}
+    flex-direction: column;
+    gap: 40px;
+  }
 
-.download-button button, .delete-button button {
-    background-color: var(--accent);
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.download-button button:hover, .delete-button button:hover {
-    filter: brightness(60%);
+  .file-thumbnail svg {
+    margin: auto;
+  }
 }

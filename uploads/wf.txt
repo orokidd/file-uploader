@@ -1,6 +1,0 @@
-
-Jul 1 = 107p
-Jul 3 = 25p
-Jul 4 = 153p
-Jul 8 = 100p
-Jul 11 = 252p

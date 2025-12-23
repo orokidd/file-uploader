@@ -18,8 +18,7 @@
 <img src="./public/images/project-img.png" alt="Screenshot of project page" align="center" style="width: 100%;">
 
 ## 🚀 Live Site
-
-The live site can be viewed [here]([https://the-odin-project-os3u.onrender.com](https://orokidd-file-uploader.onrender.com)).
+The live site can be viewed [here](https://orokidd-file-uploader.onrender.com).
 
 ## 📝 Project Description
 

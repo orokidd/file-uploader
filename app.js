@@ -20,6 +20,7 @@ const app = express()
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+// app.set("trust proxy", 1);
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -31,13 +32,14 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    // proxy: true,
     store: new PrismaSessionStore( prisma,
       {
         checkPeriod: 2 * 60 * 1000, //ms
         dbRecordIdIsSessionId: true,
       }
     ),
-    cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 }, // 7 days
+    cookie: { maxAge: 7 * 24 * 60 * 60 * 1000, secure: process.env.NODE_ENV === "production", sameSite: "lax", }, // 7 days
     })
 );
 

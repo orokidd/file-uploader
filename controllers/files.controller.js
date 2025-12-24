@@ -1,5 +1,7 @@
 const prisma = require("../config/prisma.js");
 const supabase = require("../config/supabase.js")
+const helper = require("../helpers/helpers.js")
+
 
 const uploadFile = async (req, res) => {
     const file = req.file;
@@ -86,7 +88,11 @@ const getFileDetails = async (req, res) => {
     const file = await prisma.file.findUnique({
         where: { id: parseInt(fileId)}
     })
-    res.render("./file/file", { user: req.user, file })
+
+    const formatBytes = helper.formatBytes
+    const formatDate = helper.formatDate
+    
+    res.render("./file/file", { user: req.user, file, formatBytes, formatDate })
 }
 
 // const downloadFile = async (req, res) => {

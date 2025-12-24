@@ -6,8 +6,8 @@
     <div class="file-details">
         <p><strong>File name:</strong> <%= file.originalName %></p>
         <p><strong>Mimetype:</strong> <%= file.mimetype %></p>
-        <p><strong>Created:</strong> <%= file.createdAt %></p>
-        <p><strong>Size:</strong> <%= file.size %> KB</p>
+        <p><strong>Created:</strong> <%= formatDate(file.createdAt) %></p>
+        <p><strong>Size:</strong> <%= formatBytes(file.size) %></p>
 
         <div class="file-actions">
             <a href="<%= file.url %>" class="download-button">

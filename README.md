@@ -1,6 +1,6 @@
 <h1 align="center">
   File Uploader 
-  <h4 align="center">A file uploader application with supabase</h4>
+  <h4 align="center">A file uploader application made with Node, Express, EJS, PostgreSQL, and Supabase</h4>
 </h1>
 
 <div align="center">
@@ -19,6 +19,10 @@
 
 ## 🚀 Live Site
 The live site can be viewed [here](https://orokidd-file-uploader.onrender.com).
+
+## 📼 Demo
+
+https://github.com/user-attachments/assets/e8be466c-9959-4cfc-874e-c1107c1599ae
 
 ## 📝 Project Description
 
